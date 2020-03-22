@@ -294,6 +294,21 @@ export default {
     },
     onSlideEnd(slide) {
       this.sliding = false
+    },
+    onResize() {
+      if (window.innerWidth > 992) {
+        this.rescontclass = 'px-5 py-3'
+        this.categoriesclass = 'pr-0 d-none d-sm-block category-wrapper'
+        this.carouselclass = 'px-3 pb-3'
+        this.rightclass = ''
+        this.productrowclass = ''
+      } else {
+        this.rescontclass = 'py-3 hide-overflow'
+        this.categoriesclass = 'px-0 d-none d-sm-block category-wrapper'
+        this.carouselclass = 'px-3 pr-0 pb-3'
+        this.rightclass = 'pr-0'
+        this.productrowclass = 'pr-3'
+      }
     }
   }
 }
