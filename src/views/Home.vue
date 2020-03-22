@@ -2,15 +2,15 @@
   <div class="home">
     <Navbar :categories="categories" />
     <div style="" class="wrapper">
-      <b-container fluid class="px-5 py-3 remove-py">
-        <b-row>
+      <b-container fluid class="p-0 content-mt custom-container">
+        <b-row class="m-0 py-3">
           <b-col
             lg="2"
             md="3"
             sm="3"
-            class="pr-0 d-none d-sm-block category-wrapper"
+            class="p-0 pl-3 d-none d-sm-block category-wrapper"
           >
-            <b-card-group deck style="height: 100%">
+            <b-card-group>
               <b-card
                 no-body
                 style="border: none; font-size: 16px;"
@@ -42,36 +42,50 @@
                 controls
                 indicators
                 background="#ababab"
-                img-width="1024"
-                img-height="500"
                 style="text-shadow: 1px 1px 2px #333; width: 100%;"
                 @sliding-start="onSlideStart"
                 @sliding-end="onSlideEnd"
               >
                 <!-- Text slides with image -->
-                <b-carousel-slide
-                  img-src="https://picsum.photos/1024/500/?image=5"
-                ></b-carousel-slide>
+                <b-carousel-slide>
+                  <template v-slot:img>
+                    <img
+                      class="d-block img-fluid w-100 carousel-container-height"
+                      src="https://picsum.photos/1024/500/?image=5"
+                      alt="image slot"
+                    />
+                  </template>
+                  ></b-carousel-slide
+                >
 
                 <!-- Slides with custom text -->
-                <b-carousel-slide
-                  img-src="https://picsum.photos/1024/500/?image=4"
-                >
+                <b-carousel-slide>
+                  <template v-slot:img>
+                    <img
+                      class="d-block img-fluid w-100 carousel-container-height"
+                      src="https://picsum.photos/1024/500/?image=4"
+                      alt="image slot"
+                    />
+                  </template>
                 </b-carousel-slide>
 
                 <!-- Slides with image only -->
-                <b-carousel-slide
-                  img-src="https://picsum.photos/1024/500/?image=3"
-                ></b-carousel-slide>
+                <b-carousel-slide>
+                  <template v-slot:img>
+                    <img
+                      class="d-block img-fluid w-100 carousel-container-height"
+                      src="https://picsum.photos/1024/500/?image=3"
+                      alt="image slot"
+                    />
+                  </template>
+                </b-carousel-slide>
 
                 <!-- Slides with img slot -->
                 <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
                 <b-carousel-slide>
                   <template v-slot:img>
                     <img
-                      class="d-block img-fluid w-100"
-                      width="1024"
-                      height="300"
+                      class="d-block img-fluid w-100 carousel-container-height"
                       src="https://picsum.photos/1024/500/?image=2"
                       alt="image slot"
                     />
@@ -82,10 +96,8 @@
                 <b-carousel-slide>
                   <template v-slot:img>
                     <img
-                      class="d-block img-fluid w-100"
-                      width="1024"
-                      height="500"
-                      src="https://picsum.photos/1024/500/?image=2"
+                      class="d-block img-fluid w-100 carousel-container-height"
+                      src="https://picsum.photos/1024/500/?image=1"
                       alt="image slot"
                     />
                   </template>
@@ -201,12 +213,12 @@
               </b-col>
             </b-row>
           </b-col>
-          <b-col cols="2" class="pl-0 d-none d-sm-none d-lg-block">
-            <b-row>
-              <b-col cols="12">
+          <b-col cols="2" class="p-0 pr-3 d-none d-sm-none d-lg-block">
+            <b-row class="m-0">
+              <b-col cols="12 p-0">
                 <b-card class="mb-3 card-right-height"> </b-card>
               </b-col>
-              <b-col cols="12">
+              <b-col cols="12 p-0">
                 <b-card class="card-right-height"> </b-card>
               </b-col>
             </b-row>
@@ -288,8 +300,13 @@ export default {
 </script>
 <style scoped>
 .wrapper {
-  margin-top: 56px;
   background-image: url('https://ng.jumia.is/cms/8-18/fashion-frenzy/BG-FF.jpg');
+}
+.custom-container {
+  max-width: 1200px;
+}
+.content-mt {
+  margin-top: 62px;
 }
 .category-wrapper {
   position: -webkit-sticky;
@@ -332,5 +349,11 @@ export default {
 .product-link {
   text-decoration: none;
   color: rgb(31, 29, 29);
+}
+.carousel-container-height {
+  min-height: 347px;
+}
+.carousel-img-height {
+  height: 100%;
 }
 </style>

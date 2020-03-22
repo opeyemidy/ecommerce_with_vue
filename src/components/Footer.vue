@@ -5,7 +5,7 @@
       style="background-color: #323232; color: #fff;"
       class="py-4"
     >
-      <b-row class="mx-5 d-md-none">
+      <b-row class="mx-2 d-md-none">
         <b-col v-for="list in lists" :key="list.heading" sm="3" cols="6">
           <a class="heading-link" href=""
             ><h5 class="heading-title">{{ list.heading }}</h5></a
@@ -69,7 +69,7 @@
           </b-row>
         </b-col>
       </b-row>
-      <b-row class="mx-5 mt-3 mb-5">
+      <b-row class="mx-2 mt-3 mb-5">
         <b-col lg="3" md="6" sm="12" class="text-left">
           <h5 class="heading-title mb-3">JOIN US ON</h5>
           <font-awesome-layers full-width class="p-3" style="font-size: 1.3em">
