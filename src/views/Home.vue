@@ -4,12 +4,7 @@
     <div style="" class="wrapper">
       <b-container fluid class="p-0 content-mt custom-container">
         <b-row class="m-0 py-3">
-          <b-col
-            lg="2"
-            md="3"
-            sm="3"
-            class="p-0 pl-3 d-none d-sm-block category-wrapper"
-          >
+          <b-col lg="2" md="3" sm="3" :class="categoriesclass">
             <b-card-group>
               <b-card
                 no-body
@@ -243,6 +238,7 @@ export default {
   name: 'Home',
   data() {
     return {
+      categoriesclass: '',
       categories: [
         { title: 'Fashion', link: 'fddff' },
         { title: 'Computing', link: 'dffwe' },
@@ -296,20 +292,24 @@ export default {
       this.sliding = false
     },
     onResize() {
-      if (window.innerWidth > 992) {
+      if (window.innerWidth < 992) {
         this.rescontclass = 'px-5 py-3'
-        this.categoriesclass = 'pr-0 d-none d-sm-block category-wrapper'
+        this.categoriesclass =
+          'p-0 pl-0 d-none d-sm-block category-wrapper col-sm-3 col-md-3 col-lg-2'
         this.carouselclass = 'px-3 pb-3'
         this.rightclass = ''
         this.productrowclass = ''
       } else {
-        this.rescontclass = 'py-3 hide-overflow'
-        this.categoriesclass = 'px-0 d-none d-sm-block category-wrapper'
-        this.carouselclass = 'px-3 pr-0 pb-3'
-        this.rightclass = 'pr-0'
-        this.productrowclass = 'pr-3'
+        this.categoriesclass = 'p-0 pl-3 d-none d-sm-block category-wrapper'
       }
     }
+  },
+  created() {
+    window.addEventListener('resize', this.onResize)
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('resize', this.onResize)
   }
 }
 </script>
