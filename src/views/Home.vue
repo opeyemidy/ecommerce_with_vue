@@ -110,9 +110,8 @@
                   <b-row>
                     <b-col
                       lg="3"
-                      sm="6"
                       md="4"
-                      xs="12"
+                      cols="6"
                       v-for="product in products"
                       :key="product.name"
                       class="p-0 px-3 pb-3"
@@ -147,9 +146,8 @@
                   <b-row>
                     <b-col
                       lg="3"
-                      sm="6"
                       md="4"
-                      xs="12"
+                      cols="6"
                       v-for="product in products"
                       :key="product.name"
                       class="p-0 px-3 pb-3"
@@ -184,9 +182,8 @@
                   <b-row>
                     <b-col
                       lg="3"
-                      sm="6"
                       md="4"
-                      xs="12"
+                      cols="6"
                       v-for="product in products"
                       :key="product.name"
                       class="p-0 px-3 pb-3"
