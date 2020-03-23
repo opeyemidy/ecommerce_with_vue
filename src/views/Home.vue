@@ -116,7 +116,7 @@
                       :key="product.name"
                       class="p-0 px-3 pb-3"
                     >
-                      <a href="" class="product-link">
+                      <a :href="product.route" class="product-link">
                         <b-card>
                           <img
                             :src="product.pics"
@@ -152,7 +152,7 @@
                       :key="product.name"
                       class="p-0 px-3 pb-3"
                     >
-                      <a href="" class="product-link">
+                      <a :href="product.route" class="product-link">
                         <b-card>
                           <img
                             :src="product.pics"
@@ -188,7 +188,7 @@
                       :key="product.name"
                       class="p-0 px-3 pb-3"
                     >
-                      <a href="" class="product-link">
+                      <a :href="product.route" class="product-link">
                         <b-card>
                           <img
                             :src="product.pics"
@@ -256,25 +256,29 @@ export default {
           name: 'Elegant Designer Athletic Sneakers V2- Gold & Black',
           pics: '/shoe.jpg',
           price: 'sda',
-          description: 'rrrewe'
+          description: 'rrrewe',
+          route: '/product'
         },
         {
           name: 'God Over Everything Print T-Shirt - Navy Blue',
           pics: '/shirt.jpg',
           price: 'awwq',
-          description: 'were'
+          description: 'were',
+          route: '/product'
         },
         {
           name: 'HS121L (93-Litre) Single Door Fridge - Silver',
           pics: '/fridge.jpg',
           price: 'err',
-          description: 'qwqw'
+          description: 'qwqw',
+          route: '/product'
         },
         {
           name: 'LED Backlight Sport Waterproof Quartz Wrist Watches-Black',
           pics: '/watch.jpg',
           price: 'wee',
-          description: 'ttr'
+          description: 'ttr',
+          route: '/product'
         }
         // { name: 'eww', price: 'wdf', description: 'ww' },
         // { name: 'qww', price: 'wes', description: 'ewe' },

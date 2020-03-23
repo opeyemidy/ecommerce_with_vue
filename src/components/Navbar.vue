@@ -9,7 +9,7 @@
         <!-- Right aligned nav items -->
 
         <b-navbar-nav class="ml-auto">
-          <div class="d-block d-sm-none">
+          <div class="d-sm-block d-md-none">
             <b-nav-item-dropdown text="Categories" right>
               <b-dropdown-item
                 v-for="category in categories"
