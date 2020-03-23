@@ -2,9 +2,14 @@
   <div class="home">
     <Navbar :categories="categories" />
     <div style="" class="wrapper">
-      <b-container fluid class="p-0 content-mt custom-container">
+      <b-container fluid :class="contentClass">
         <b-row class="m-0 py-3">
-          <b-col lg="2" md="3" sm="3" :class="categoriesclass">
+          <b-col
+            lg="2"
+            md="3"
+            sm="3"
+            class="d-none d-md-block category-wrapper"
+          >
             <b-card-group>
               <b-card
                 no-body
@@ -27,7 +32,7 @@
               </b-card>
             </b-card-group>
           </b-col>
-          <b-col lg="8" sm="9" md="9">
+          <b-col lg="8" sm="12" md="9">
             <b-row class="px-3 pb-3">
               <b-carousel
                 id="carousel-1"
@@ -239,6 +244,7 @@ export default {
   data() {
     return {
       categoriesclass: '',
+      contentClass: '',
       categories: [
         { title: 'Fashion', link: 'fddff' },
         { title: 'Computing', link: 'dffwe' },
@@ -294,13 +300,15 @@ export default {
     onResize() {
       if (window.innerWidth < 992) {
         this.rescontclass = 'px-5 py-3'
-        this.categoriesclass =
-          'p-0 pl-0 d-none d-sm-block category-wrapper col-sm-3 col-md-3 col-lg-2'
+        this.categoriesclass = 'p-0 custom-container md-mt-height'
+        ;('p-0 pl-0 d-none d-sm-none d-md-block category-wrapper col-sm-3 col-md-3 col-lg-2')
         this.carouselclass = 'px-3 pb-3'
+        this.contentClass = 'md-mt-height'
         this.rightclass = ''
         this.productrowclass = ''
       } else {
-        this.categoriesclass = 'p-0 pl-3 d-none d-sm-block category-wrapper'
+        this.categoriesclass = 'p-0 pl-3 d-none d-sm-none category-wrapper'
+        this.contentClass = 'p-0 content-mt custom-container'
       }
     }
   },
@@ -370,5 +378,8 @@ export default {
 }
 .carousel-img-height {
   height: 100%;
+}
+.md-mt-height {
+  margin-top: 56px;
 }
 </style>
