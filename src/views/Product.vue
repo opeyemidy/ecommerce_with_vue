@@ -57,33 +57,20 @@ export default {
             id: 3,
             url:
               'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/93/616663/5.jpg?9511'
-          },
-          {
-            id: 4,
-            url:
-              'https://ng.jumia.is/unsafe/fit-in/150x150/filters:fill(white)/product/93/616663/6.jpg?9511'
           }
         ],
         normal_size: [
           {
             id: 1,
-            url:
-              'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/93/616663/3.jpg?9511'
+            url: '/shoeone_resize.png'
           },
           {
             id: 2,
-            url:
-              'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/93/616663/4.jpg?9511'
+            url: '/shoetwo_resize.png'
           },
           {
             id: 3,
-            url:
-              'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/93/616663/5.jpg?9511'
-          },
-          {
-            id: 4,
-            url:
-              'https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/93/616663/5.jpg?9511'
+            url: 'shoethree_resize.png'
           }
         ],
         large_size: [
@@ -101,11 +88,6 @@ export default {
             id: 3,
             url:
               'https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/93/616663/5.jpg?9511'
-          },
-          {
-            id: 4,
-            url:
-              'https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/93/616663/6.jpg?9511'
           }
         ]
       },
@@ -115,7 +97,7 @@ export default {
         hoverDelay: 300,
         namespace: 'zoomer-bottom',
         move_by_click: true,
-        scroll_items: 4,
+        scroll_items: 3,
         choosed_thumb_border_color: '#dd2c00',
         scroller_position: 'bottom',
         zoomer_pane_position: 'right'
