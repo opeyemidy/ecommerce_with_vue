@@ -134,6 +134,7 @@
 <style scoped>
 .container-color {
   background-color: #f5f5f5;
+  margin-top: 62px;
 }
 .remove-row-margin {
   margin: 0;
@@ -150,6 +151,7 @@ export default {
   name: 'app',
   data() {
     return {
+      productdetails: [],
       images: {
         thumbs: [
           {
@@ -212,6 +214,13 @@ export default {
         zoomer_pane_position: 'right'
       }
     }
+  },
+  created() {
+    this.productdetails = this.$store.state.products.filter(item => {
+      return item.id === parseInt(this.$route.params.id)
+    })
+
+    console.log(this.productdetails)
   }
 }
 </script>

@@ -12,6 +12,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import ProductZoomer from 'vue-product-zoomer'
+import store from './store'
 
 library.add(fas, fab)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
@@ -24,5 +25,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')

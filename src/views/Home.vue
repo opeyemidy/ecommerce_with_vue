@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <Navbar :categories="categories" />
     <div style="" class="wrapper">
       <b-container fluid :class="contentClass">
         <b-row class="m-0 py-3">
@@ -22,7 +21,7 @@
                     style="border: none; font-size: 16px; padding: 0.3rem 1.25rem ;"
                     v-for="item in categories"
                     :key="item.title"
-                    href="#some-link"
+                    to="#some-link"
                     class="h5"
                   >
                     <!-- <span><b-icon icon="alert-triangle"></b-icon></span> -->
@@ -115,23 +114,26 @@
                       v-for="product in products"
                       :key="product.name"
                       class="p-0 px-3 pb-3"
+                      :to="
+                        `${product.route}/${product.id}-${product.name
+                          .replace(/[' ']+/g, '-')
+                          .toLowerCase()}`
+                      "
                     >
-                      <a :href="product.route" class="product-link">
-                        <b-card>
-                          <img
-                            :src="product.pics"
-                            style="width: 100%; margin-bottom: 1rem;"
-                          />
-                          <div class="text-left">
-                            <p class="product-title">
-                              {{ product.name }}
-                            </p>
-                            <b-card-text>
-                              ₦ 50000
-                            </b-card-text>
-                          </div>
-                        </b-card>
-                      </a>
+                      <b-card>
+                        <img
+                          :src="product.pics"
+                          style="width: 100%; margin-bottom: 1rem;"
+                        />
+                        <div class="text-left">
+                          <p class="product-title">
+                            {{ product.name }}
+                          </p>
+                          <b-card-text>
+                            ₦ 50000
+                          </b-card-text>
+                        </div>
+                      </b-card>
                     </b-col>
                   </b-row>
                 </b-card>
@@ -151,23 +153,26 @@
                       v-for="product in products"
                       :key="product.name"
                       class="p-0 px-3 pb-3"
+                      :to="
+                        `${product.route}/${product.id}-${product.name
+                          .replace(/[' ']+/g, '-')
+                          .toLowerCase()}`
+                      "
                     >
-                      <a :href="product.route" class="product-link">
-                        <b-card>
-                          <img
-                            :src="product.pics"
-                            style="width: 100%; margin-bottom: 1rem;"
-                          />
-                          <div class="text-left">
-                            <p class="product-title">
-                              {{ product.name }}
-                            </p>
-                            <b-card-text>
-                              ₦ 50000
-                            </b-card-text>
-                          </div>
-                        </b-card>
-                      </a>
+                      <b-card>
+                        <img
+                          :src="product.pics"
+                          style="width: 100%; margin-bottom: 1rem;"
+                        />
+                        <div class="text-left">
+                          <p class="product-title">
+                            {{ product.name }}
+                          </p>
+                          <b-card-text>
+                            ₦ 50000
+                          </b-card-text>
+                        </div>
+                      </b-card>
                     </b-col>
                   </b-row>
                 </b-card>
@@ -187,23 +192,26 @@
                       v-for="product in products"
                       :key="product.name"
                       class="p-0 px-3 pb-3"
+                      :to="
+                        `${product.route}/${product.id}-${product.name
+                          .replace(/[' ']+/g, '-')
+                          .toLowerCase()}`
+                      "
                     >
-                      <a :href="product.route" class="product-link">
-                        <b-card>
-                          <img
-                            :src="product.pics"
-                            style="width: 100%; margin-bottom: 1rem;"
-                          />
-                          <div class="text-left">
-                            <p class="product-title">
-                              {{ product.name }}
-                            </p>
-                            <b-card-text>
-                              ₦ 50000
-                            </b-card-text>
-                          </div>
-                        </b-card>
-                      </a>
+                      <b-card>
+                        <img
+                          :src="product.pics"
+                          style="width: 100%; margin-bottom: 1rem;"
+                        />
+                        <div class="text-left">
+                          <p class="product-title">
+                            {{ product.name }}
+                          </p>
+                          <b-card-text>
+                            ₦ 50000
+                          </b-card-text>
+                        </div>
+                      </b-card>
                     </b-col>
                   </b-row>
                 </b-card>
@@ -223,7 +231,6 @@
         </b-row>
       </b-container>
     </div>
-    <Footer />
   </div>
 </template>
 <style scoped>
@@ -242,54 +249,21 @@ export default {
     return {
       categoriesclass: '',
       contentClass: '',
-      categories: [
-        { title: 'Fashion', link: 'fddff' },
-        { title: 'Computing', link: 'dffwe' },
-        { title: 'Phones & tablets', link: 'fffdfdf' },
-        { title: 'Grocery', link: 'fffdfdf' },
-        { title: 'Health & Beauty', link: 'dfdfdff' }
-      ],
       slide: 0,
-      sliding: null,
-      products: [
-        {
-          name: 'Elegant Designer Athletic Sneakers V2- Gold & Black',
-          pics: '/shoe.jpg',
-          price: 'sda',
-          description: 'rrrewe',
-          route: '/product'
-        },
-        {
-          name: 'God Over Everything Print T-Shirt - Navy Blue',
-          pics: '/shirt.jpg',
-          price: 'awwq',
-          description: 'were',
-          route: '/product'
-        },
-        {
-          name: 'HS121L (93-Litre) Single Door Fridge - Silver',
-          pics: '/fridge.jpg',
-          price: 'err',
-          description: 'qwqw',
-          route: '/product'
-        },
-        {
-          name: 'LED Backlight Sport Waterproof Quartz Wrist Watches-Black',
-          pics: '/watch.jpg',
-          price: 'wee',
-          description: 'ttr',
-          route: '/product'
-        }
-        // { name: 'eww', price: 'wdf', description: 'ww' },
-        // { name: 'qww', price: 'wes', description: 'ewe' },
-        // { name: 'eef', price: 'ew', description: 'dds' },
-        // { name: 'tbf', price: 'ewwee', description: 'sdds' }
-      ]
+      sliding: null
     }
   },
   components: {
     Navbar,
     Footer
+  },
+  computed: {
+    products() {
+      return this.$store.state.products
+    },
+    categories() {
+      return this.$store.state.categories
+    }
   },
   methods: {
     onSlideStart(slide) {
